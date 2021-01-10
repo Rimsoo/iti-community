@@ -30,8 +30,9 @@ export class UserRegistrationComponent implements OnInit {
 
   async submit() {
 
-    // TODO  Vérifier que la confirmation de mot de passe correspond au mot de passe
+    // Vérifier que la confirmation de mot de passe correspond au mot de passe
     if (this.form.form.invalid || this.model.password !== this.model.confirmPassword) {
+      alert("Les mots de passe ne sont pas identique");
       return;
     }
 
@@ -40,6 +41,7 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   goToLogin() {
-    // TODO rediriger l'utilisateur sur "/splash/login"
+    // rediriger l'utilisateur sur "/splash/login"
+    this.router.navigate(['/splash/login']);
   }
 }
