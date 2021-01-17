@@ -1,13 +1,12 @@
 <div class="post">
-  <div class="post-author-name"></div>
+  <div class="post-author-name" [innerHTML]="post.createdBy.username"></div>
 
   <!-- TIPS: [ngStyle]="{'background-image': url(...) }" -->
-  <div class="post-author-photo"></div>
-  <div class="post-date"></div>
+  <div class="post-author-photo"  [ngStyle]="{'background-image': 'url(post.createdBy.photoUrl)'}"></div>
+  <div class="post-date" [innerHTML]="post.createdAt"></div>
 
-  <!-- TIPS: [ngClass]="{liked: [expression booléenne]}" -->
   <div class="post-user-like">
-    <i nz-icon nzType="heart" [nzTheme]="post.liked ? 'fill' : 'outline'"></i>
+    <i nz-icon nzType="heart" [nzTheme]="post.liked ? 'fill' : 'outline'" (click)="like()"></i>
   </div>
 
   <p class="post-text" [innerHTML]="post.message.text.content"></p>
@@ -15,6 +14,24 @@
   <!-- Itérer sur les "attachements" du message -->
   <div class="post-attachements" *ngFor="let element of post.message.attachements">
     <!-- Utiliser ngIf pour afficher le bon composant en fonction du type d'élément-->
+    <div *ngIf="element.type == 'video'">
+      <video controls [src]='element.url'></video>
+    </div>
+    <div *ngIf="element.type == 'audio'">
+      <audio controls [src]='element.url'></audio>
+    </div>
+    <div *ngIf="element.type == 'image'">
+      <img [src]='element.url'>
+    </div>
+    <div *ngIf="element.type == 'youtube'">
+      <youtube-player
+        #player
+        videoId="element.videoId"
+        (ready)="onReady($event)"
+        (stateChange)="onStateChange($event)"
+      ></youtube-player>
+
+    </div>
   </div>
   <div #anchor></div>
 </div>
