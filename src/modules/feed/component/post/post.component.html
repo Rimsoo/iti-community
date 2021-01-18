@@ -2,7 +2,7 @@
   <div class="post-author-name" [innerHTML]="post.createdBy.username"></div>
 
   <!-- TIPS: [ngStyle]="{'background-image': url(...) }" -->
-  <div class="post-author-photo"  [ngStyle]="{'background-image': 'url(post.createdBy.photoUrl)'}"></div>
+  <div class="post-author-photo"  [ngStyle]="{'background-image': 'url('+post.createdBy.photoUrl+')'}"></div>
   <div class="post-date" [innerHTML]="post.createdAt"></div>
 
   <div class="post-user-like">

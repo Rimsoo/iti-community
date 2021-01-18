@@ -42,6 +42,8 @@ export class UserWidgetComponent implements OnInit {
       nzOkText: "Déconnexion",
       nzOnOk: () => {
         // TODO logout puis rediriger vers "/splash/login"
+        this.authService.logout();
+        this.router.navigate(['/splash/login']);
       }
     });
   }
