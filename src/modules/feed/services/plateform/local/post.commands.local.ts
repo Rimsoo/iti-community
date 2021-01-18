@@ -44,7 +44,10 @@ export class LocalPostCommands extends PostCommands {
             throw Error("Post not found");
         }
 
-        post.liked = true;
+        if(post.liked)
+            post.liked = false;
+        else
+            post.liked = true;
         this.storage.setValue(posts);
     }
 }
