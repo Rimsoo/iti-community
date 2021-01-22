@@ -2,24 +2,28 @@
   <form nz-form nzLayout="vertical" #f="ngForm" (ngSubmit)="submit()">
     <nz-form-item>
       <nz-form-label nzFor="username">Username</nz-form-label>
-      <nz-form-control nzErrorTip="Nom obligatoire">
-        <input required class="ant-input" type="text" name="username" id="username" [(ngModel)]="model.username"
+      <nz-form-control nzHasFeedback nzErrorTip="Nom obligatoire">
+        <input [ngModel]="'Required Input'" required class="ant-input" type="text" name="username" id="username" [(ngModel)]="model.username"
           #username="ngModel">
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
       <nz-form-label nzFor="password">Mot de passe</nz-form-label>
-      <nz-form-control nzErrorTip="Mot de passe obligatoire">
-        <input required class="ant-input" type="password" name="password" id="password" [(ngModel)]="model.password"
+      <nz-form-control nzHasFeedback nzErrorTip="Mot de passe obligatoire">
+        <input [ngModel]="'Required Input'" required class="ant-input" type="password" name="password" id="password" [(ngModel)]="model.password"
           #password="ngModel">
       </nz-form-control>
     </nz-form-item>
 
     <nz-form-item>
       <nz-form-label nzFor="confirm-password">Confirmation du mot de passe</nz-form-label>
-      <nz-form-control nzErrorTip="Mot de passe non identique">
+      <nz-form-control nzHasFeedback [nzErrorTip]="confirmErrorTip">
         <input required class="ant-input" type="password" name="confirm-password" id="confirm-password"
           [(ngModel)]="model.confirmPassword" #confirm="ngModel">
+          <ng-template #confirmErrorTip let-i>
+            <ng-container *ngIf="i.errors?.required">{{ 'validation.confirm-password.required' | translate }}</ng-container>
+            <ng-container *ngIf="i.errors?.equar">{{ 'validation.password.twice' | translate }}</ng-container>
+          </ng-template>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
