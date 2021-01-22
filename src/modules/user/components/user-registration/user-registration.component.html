@@ -2,7 +2,7 @@
   <form nz-form nzLayout="vertical" #f="ngForm" (ngSubmit)="submit()">
     <nz-form-item>
       <nz-form-label nzFor="username">Username</nz-form-label>
-      <nz-form-control nzHasFeedback nzErrorTip="Nom obligatoire">
+      <nz-form-control nzErrorTip="Nom obligatoire">
         <input [ngModel]="'Required Input'" required class="ant-input" type="text" name="username" id="username" [(ngModel)]="model.username"
           #username="ngModel">
       </nz-form-control>
