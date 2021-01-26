@@ -59,7 +59,22 @@ export class PostMapper {
     } ;
     attachements.push(yt);
     }
-
+    
+    let stylizedText: string = '';
+    if (message && message.length > 0) {
+      for (let line of message.split("\n")) {
+        for (let t of line.split(" ")) {
+          if (t.startsWith("http") && t.length>7) {  
+            stylizedText += `<a href="${t}" target="_blank">${t}</a> `;
+          }
+          else
+            stylizedText += t + " ";
+        }
+        stylizedText += '<br>';
+      }
+      message = stylizedText;
+    }
+  
     return {
       text: {
         type: 'text',
