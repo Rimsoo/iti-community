@@ -60,18 +60,18 @@ Le inputs son créés à partir du composant `nz-form-item` de la ui library [ng
 
 #### Level I
     
-1. Terminer le formulaire pour l'ajout d'un utilisateur
-2. Rendre le username et le mot de passe obligatoires
-3. En cas de succès, rediriger l'utilisateur sur /splash/login
+1. ~~Terminer le formulaire pour l'ajout d'un utilisateur~~
+2. ~~Rendre le username et le mot de passe obligatoires~~
+3. ~~En cas de succès, rediriger l'utilisateur sur /splash/login~~
 
 #### Level II
 
-4. Afficher les messages d'erreurs de validations
+4. ~~Afficher les messages d'erreurs de validations~~
     > Utiliser la propriété `nzErrorTip` sur le composant `nz-form-control`
     ```html
     <nz-form-control nzErrorTip="Message de validation">
     ```
-5. Vérifier si le username est disponible. Informer l'utilisateur de l'indisponibilité d'un username.
+5. ~~Vérifier si le username est disponible. Informer l'utilisateur de l'indisponibilité d'un username.~~
     > Utiliser le la méthode `exists` sur la classe `UserQueries`
 
 ### Sign In
@@ -82,14 +82,14 @@ Le clic sur le bouton "Connexion" permet de soumettre le formulaire en appelant 
 
 #### Level I
 
-1. Faire le formulaire de sign in
-2. Rendre le username et le mot de passe obligatoires
-3. Rediriger l'utilisateur sur "/" en cas de succès
+1. ~~Faire le formulaire de sign in~~
+2. ~~Rendre le username et le mot de passe obligatoires~~
+3. ~~Rediriger l'utilisateur sur "/" en cas de succès~~
 
 #### Level II
 
-4. Afficher les messages d'erreurs de validation pour chaque champs
-5. Afficher un message si le login a échoué
+4. ~~Afficher les messages d'erreurs de validation pour chaque champs~~
+5. ~~Afficher un message si le login a échoué~~
     > Vous pouvez utiliser le `NzMessageService` pour afficher des messages
 
 ### Room
@@ -100,16 +100,16 @@ Un utilisateur doit en amont avoir sélectionné une room pour pouvoir y poster 
 
 #### Level I
 
-1. Afficher la liste des rooms dans le menu
+1. ~~Afficher la liste des rooms dans le menu~~
     > `src/modules/room/room-menu`
 
     > Utiliser la directive ngFor pour itérer sur les rooms et afficher leurs noms
 
-2. Pouvoir naviguer vers room au clic dans le menu
+2. ~~Pouvoir naviguer vers room au clic dans le menu~~
 
 #### Level II
 
-3. Pouvoir ajouter une nouvelle room
+3. ~~Pouvoir ajouter une nouvelle room~~
     > Dans `src/modules/room/room-menu`
 
     > Appeler la méthode open du composant `app-room-create-modal` au clic du bouton "+"
@@ -126,7 +126,7 @@ Un utilisateur doit en amont avoir sélectionné une room pour pouvoir y poster 
     ```
     > Lors de la validation du formulaire, la méthode ```onOk``` sera invoquée (tel que configuré sur le composant `nz-modal`)
 
-4. Sélectionner par défaut la première room de la liste
+4. ~~Sélectionner par défaut la première room de la liste~~
     > Rediriger vers la première room si il n'y a pas de roomId dans le store. 
     > Tester `this.feedStore.value.roomId`
   
@@ -138,18 +138,18 @@ Un utilisateur doit en amont avoir sélectionné une room pour pouvoir y poster 
 ### Post
 
 ### Level I
-1. Pouvoir rédiger et envoyer un post
+1. ~~Pouvoir rédiger et envoyer un post~~
     > `src/modules/input/components/feed-input`
 
-2. Afficher les posts reçues dans la room
+2. ~~Afficher les posts reçues dans la room~~
     > `src/modules/feed/components/feed`
-3. Afficher le nom de l'auteur des messages
-4. Afficher la photo de l'auteur des messages
-5. Afficher la date du post
-6. Afficher une image si le message contient une url vers une image
-7. Afficher une video si le message contient une url vers une vidéo (https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4)
-8. Afficher le player de youtube si le message contient un lien youtube
-9. Implémenter le bouton like
+3. ~~Afficher le nom de l'auteur des messages~~
+4. ~~Afficher la photo de l'auteur des messages~~
+5. ~~Afficher la date du post~~
+6. ~~Afficher une image si le message contient une url vers une image~~
+7. ~~Afficher une video si le message contient une url vers une vidéo (https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4)~~
+8. ~~Afficher le player de youtube si le message contient un lien youtube~~
+9. ~~Implémenter le bouton like~~
 
 ### Level II
 8. Utiliser [luxon](https://moment.github.io/luxon/docs/class/src/duration.js~Duration.html) pour formatter les date à l'aide d'un [Pipe Angular](https://angular.io/guide/pipes#creating-pipes-for-custom-data-transformations)
@@ -157,17 +157,17 @@ Un utilisateur doit en amont avoir sélectionné une room pour pouvoir y poster 
 10. Pouvoir uploader des photos, vidéos et audios
 
 ### Level III
-10. Pouvoir parser plusieurs type de contenus dans un seul post
-11. Remplacer les liens http par des balises <a>...</a>.
-12. Dans les messages, afficher les mentions `@username` en vert
+10. ~~Pouvoir parser plusieurs type de contenus dans un seul post~~
+11. ~~Remplacer les liens http par des balises <a>...</a>.~~
+12. ~~Dans les messages, afficher les mentions `@username` en vert~~
 
 ### User Widget 
 
 ### Level I
 
-1. Afficher la photo de l'utilisateur connecté
-2. Pouvoir éditer le profile de l'utilisateur: son username et sa photo en cliquant sur le bouton dédié
-3. Pouvoir se déconnecter de l'application encliquant sur le bonton rouge de logout. Rediriger l'utilisateur vers le /splash/login
+1. ~~Afficher la photo de l'utilisateur connecté~~
+2. ~~Pouvoir éditer le profile de l'utilisateur: son username et sa photo en cliquant sur le bouton dédié~~
+3. ~~Pouvoir se déconnecter de l'application encliquant sur le bonton rouge de logout. Rediriger l'utilisateur vers le /splash/login~~
 
 ### Notifications
 
