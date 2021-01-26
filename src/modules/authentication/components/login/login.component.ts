@@ -49,6 +49,8 @@ export class LoginComponent implements OnInit {
       if(result.success)
       {
         this.router.navigate(['/']);
+      }else{
+        this.nzMessageService.error("Nom d'utilisateur ou mot de passe incorrect");
       }
     } catch (e) {
       this.nzMessageService.error("Une erreur est survenue. Veuillez réessayer plus tard");
