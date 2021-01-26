@@ -60,12 +60,16 @@ export class PostMapper {
     attachements.push(yt);
     }
     
+    // clickable links & highlight @users
     let stylizedText: string = '';
     if (message && message.length > 0) {
       for (let line of message.split("\n")) {
         for (let t of line.split(" ")) {
           if (t.startsWith("http") && t.length>7) {  
             stylizedText += `<a href="${t}" target="_blank">${t}</a> `;
+          }
+          else if (t.startsWith("@")) {  
+            stylizedText += `<span class="post-tag-user">${t}</span> `;
           }
           else
             stylizedText += t + " ";

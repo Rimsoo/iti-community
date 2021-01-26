@@ -9,6 +9,12 @@
     padding: 20px 30px 20px 50px;
     margin: 0;
     word-break: break-all;
+
+    .post-tag-user
+    {
+      background-color: #75b658;
+      color: #EEE;
+    }
   }
 
   .post-author-name,
@@ -73,5 +79,11 @@
   .post-attachements {
     border-radius: 0 0 8px 8px;
     overflow: hidden;
+  }
+}
+::ng-deep {
+  .post-tag-user {
+    background-color: green;
+    color: white;
   }
 }
