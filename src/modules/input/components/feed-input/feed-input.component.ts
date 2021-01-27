@@ -42,7 +42,7 @@ export class FeedInputComponent {
    */
   chooseMention(user: User) {
     if (this.currentMention) {
-      this.message = this.message.substr(0, this.currentMention.index! + 1) + user.username + this.message.substr(this.currentMention.index! + this.currentMention[1].length + 1) + " ";
+      this.message = this.message.substr(0, this.currentMention.index! + 1) + user.username + this.message.substr(this.currentMention.index! + this.currentMention[0].length + 1) + " ";
     }
     this.hideMentionList();
   }
@@ -72,6 +72,14 @@ export class FeedInputComponent {
    */
   onMessageChanged(message: string) {
     this.message = message;
+    const regex = /\@\S+/gmi;
+    let match = null;
+    if (match = regex.exec(message)) {
+      this.searchMentionedUsers(match[0].substring(1));
+      this.showMentionList(match);
+    }else{
+      this.hideMentionList();
+    }
   }
 
   /**
@@ -110,7 +118,7 @@ export class FeedInputComponent {
    * @param e
    */
   onInputKeyUp(e: KeyboardEvent) {
-
+    
   }
 
   async searchMentionedUsers(search: string) {
