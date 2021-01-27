@@ -172,7 +172,7 @@ Un utilisateur doit en amont avoir sélectionné une room pour pouvoir y poster 
 
 ### Level I
 
-1. Au clic sur le bouton de notifications, afficher ou masquer une barre de notification
+1. ~~Au clic sur le bouton de notifications, afficher ou masquer une barre de notification~~
 2. Dans la barre de notifications, lister toutes les notifications reçues avec : un message décrivant la notification, la photo de l'utilisateur concerné et la date
 3. Afficher sur fond vert les notifications non lues
 

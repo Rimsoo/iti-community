@@ -1,1 +1,9 @@
-<p>notification-bar works!</p>
+
+<div class="title">Notifications</div>
+<br>
+<div class="notif">
+  <div *ngFor="let notif of anyNotifications" class="notif-body">
+    {{notif.data.user.username}} - {{notif.subject}}
+    <p>{{'Il ya ' + timeConversion(notif.timestamp)}}</p>
+  </div>
+</div>

@@ -9,7 +9,7 @@ export class LocalNotificationQueries {
             unread: true,
             data: {
                 user: {
-                    username: "",
+                    username: "Rimso",
                     id: ""
                 },
                 room: {
@@ -24,7 +24,7 @@ export class LocalNotificationQueries {
             unread: true,
             data: {
                 user: {
-                    username: "",
+                    username: "Toto",
                     id: ""
                 },
                 room: {
